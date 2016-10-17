@@ -1,0 +1,11 @@
+Problemas con InnerHTML
+
+
+http://www.anieto2k.com/2006/12/18/dom-como-alternativa-a-innerhtml/
+
+
+http://www.julienlecomte.net/blog/2007/12/38/
+
+Speed test InnerHTML vs DOM appendChild
+
+http://andrew.hedges.name/experiments/innerhtml/

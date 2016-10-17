@@ -1,0 +1,12 @@
+Documentacion oficial sobre GridView
+https://msdn.microsoft.com/en-us/library/2s019wc0%28v=vs.100%29.aspx
+
+
+Pequeño ejemplo
+http://www.c-sharpcorner.com/UploadFile/9f0ae2/gridview-edit-delete-and-update-in-Asp-Net/
+
+Otro ejemplo
+https://csaspnetgridview.codeplex.com/
+
+Ejemplo con dropdown
+http://www.aspsnippets.com/Articles/Populate-DropDownList-with-Selected-Value-in-EditItemTemplate-of-GridView-in-ASPNet.aspx
