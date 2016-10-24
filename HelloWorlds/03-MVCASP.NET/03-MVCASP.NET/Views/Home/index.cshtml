@@ -1,0 +1,32 @@
+﻿@model _03_MVCASP.NET.Models.clsPersona
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>home</title>
+</head>
+<body>
+    <div> 
+        <p>VIEW DATA</p>
+        Hola @ViewData["Nombre"] @ViewData["Apellidos"]<br />
+        -----------------------------------------------------------------------
+        <p>VIEW BAG</p>
+        @ViewBag.Nombrebag @ViewBag.Apellidosbag<br />
+        -----------------------------------------------------------------------<br/>
+
+        <p>Models</p>
+
+        Mi nombre es @Model.nombre @Model.apellido. Su edad es de @Model.edad años.
+
+        @Html.ActionLink("Go to Listado", "Indexlistado")
+        
+
+    </div>
+</body>
+</html>

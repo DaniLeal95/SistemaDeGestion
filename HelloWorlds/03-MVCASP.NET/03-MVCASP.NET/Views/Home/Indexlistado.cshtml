@@ -1,0 +1,57 @@
+﻿@model List<_03_MVCASP.NET.Models.clsPersona>
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Indexlistado</title>
+</head>
+<body>
+    <div> 
+        <p>LISTADO</p>
+
+        <table>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellido
+                </th>
+                <th>
+                    Edad
+                </th>
+            </tr>
+            @for(int i = 0; i < Model.Count(); i++)
+            
+            {
+                <tr>
+                    <td>
+                        @Model.ElementAt(i).nombre
+                    </td>
+                    <td>
+                        @Model.ElementAt(i).apellido
+                    </td>
+                    <td>
+                        @Model.ElementAt(i).edad
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+
+                    </td>
+                </tr>
+            }
+
+
+
+        </table>
+    </div>
+</body>
+</html>
