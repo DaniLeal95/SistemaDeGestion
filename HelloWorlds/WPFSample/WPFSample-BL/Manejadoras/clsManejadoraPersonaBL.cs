@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPFSample_BL
 {
-    public class Class1
+    public class clsManejadoraPersonaBL
     {
     }
 }
