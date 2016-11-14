@@ -1,0 +1,4 @@
+C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-Ent\bin\Debug\WPFSample-Ent.dll
+C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-Ent\bin\Debug\WPFSample-Ent.pdb
+C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-Ent\obj\Debug\WPFSample-Ent.dll
+C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-Ent\obj\Debug\WPFSample-Ent.pdb

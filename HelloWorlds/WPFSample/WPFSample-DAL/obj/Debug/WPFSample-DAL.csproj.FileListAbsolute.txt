@@ -1,0 +1,7 @@
+C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-DAL\bin\Debug\WPFSample-DAL.dll
+C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-DAL\bin\Debug\WPFSample-DAL.pdb
+C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-DAL\bin\Debug\WPFSample-Ent.dll
+C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-DAL\bin\Debug\WPFSample-Ent.pdb
+C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-DAL\obj\Debug\WPFSample-DAL.csprojResolveAssemblyReference.cache
+C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-DAL\obj\Debug\WPFSample-DAL.dll
+C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-DAL\obj\Debug\WPFSample-DAL.pdb
