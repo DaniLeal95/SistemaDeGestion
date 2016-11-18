@@ -39,5 +39,17 @@ namespace WPFSample_BL
 
             return resultado;
         }
+
+        public clsPersona getPersona (int id)
+        {
+            clsPersona p;
+            p = cmpd.getPersona(id);
+            return p;
+        }
+
+        public int deletePersona(int id)
+        {
+            return cmpd.deletePerson(id);
+        }
     }
 }

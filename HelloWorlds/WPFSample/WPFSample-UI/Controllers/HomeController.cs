@@ -38,9 +38,12 @@ namespace WPFSample_UI.Controllers
 
         //Metodos para Actualizar
 
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
-            return View();
+            clsManejadoraPersonaBL cmpb = new clsManejadoraPersonaBL();
+            clsPersona p = cmpb.getPersona(id);
+
+            return View("Edit",p);
         }
 
         [HttpPost]
@@ -55,6 +58,42 @@ namespace WPFSample_UI.Controllers
             return View("Index",listado.getListadoPersonaBL());
         }
 
+        //Metodo para detail
+        
+        public ActionResult Details(int id)
+        {
+            clsManejadoraPersonaBL detail = new clsManejadoraPersonaBL();
+            
+            clsPersona p = detail.getPersona(id);
+            return View("Details", p);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            clsManejadoraPersonaBL cmpb = new clsManejadoraPersonaBL();
+            clsPersona p = cmpb.getPersona(id);
+
+            return View("Delete",p);
+        }
+        
+        [HttpPost , ActionName("Delete")]
+        public ActionResult DeleteConfirm(int id)
+        {
+            clsListadosPersonasBL listado = new clsListadosPersonasBL();
+            clsManejadoraPersonaBL cmpb = new clsManejadoraPersonaBL();
+            try
+            {
+                cmpb.deletePersona(id);
+                return View("Index", listado.getListadoPersonaBL());
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
+            
+        
+
+        }
 
     }
 }

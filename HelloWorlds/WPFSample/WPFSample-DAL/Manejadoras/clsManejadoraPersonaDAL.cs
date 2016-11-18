@@ -79,7 +79,7 @@ namespace WPFSample_DAL.Manejadoras
             int resultado=-1;
             
 
-            SqlConnection conexion;
+            SqlConnection conexion = new SqlConnection();
             SqlCommand comando;
 
 
@@ -102,7 +102,103 @@ namespace WPFSample_DAL.Manejadoras
                                             "=@Apellidos, " + ColumnasConstantes.colFechaNac +
                                             "=@FechaNac, " + ColumnasConstantes.colDireccion +
                                             "=@Direccion, " + ColumnasConstantes.colTelefono +
-                                            "=@Telefono where IDPersona=@Id";
+                                            "=@Telefono where IDPersona="+persona.id;
+                comando.Connection = conexion;
+                resultado = comando.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+                return resultado;
+        }
+        /// <summary>
+        /// Devuelve una persona
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public clsPersona getPersona(int id)
+        {
+            clsPersona persona = new clsPersona();
+
+
+            clsMyConnection myconexion = new clsMyConnection();
+
+
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            
+            SqlDataReader lector = null;
+            comando.Parameters.Add("@id", System.Data.SqlDbType.Int).Value=id;
+            try
+            {
+                conexion = myconexion.getConnection();
+
+                comando.CommandText = "select * from personas where IDPersona = @id";
+                comando.Connection = conexion;
+                lector = comando.ExecuteReader();
+
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        
+                        persona.id = (int)lector[ColumnasConstantes.colId];
+                        persona.nombre = (String)lector[ColumnasConstantes.colNombre];
+                        persona.apellido = (String)lector[ColumnasConstantes.colApellidos];
+                        persona.fechaNac = (DateTime)lector[ColumnasConstantes.colFechaNac];
+                        persona.direccion = (String)lector[ColumnasConstantes.colDireccion];
+                        persona.telefono = (String)lector[ColumnasConstantes.colTelefono];
+                        
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (lector != null)
+                {
+                    lector.Close();
+                }
+                myconexion.closeConnection(ref conexion);
+            }
+            return persona;
+        }
+
+
+        /// <summary>
+        /// Borra a una persona segun la id que nos envien
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int deletePerson(int id)
+        {
+            int resultado = 0;
+
+            clsMyConnection myconexion = new clsMyConnection();
+
+
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            comando.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = id;
+            try
+            {
+                conexion = miConexion.getConnection();
+                comando = new SqlCommand();
+
+
+                //Comando Sql
+                comando.CommandText = "Delete from personas Where IDPersona = "+id;
+                comando.Connection = conexion;
 
                 resultado = comando.ExecuteNonQuery();
             }
@@ -112,10 +208,16 @@ namespace WPFSample_DAL.Manejadoras
             }
             finally
             {
-
+                conexion.Close();
             }
 
-                return resultado;
+            return resultado;
+
+
+            
         }
+
+         
     }
+
 }
