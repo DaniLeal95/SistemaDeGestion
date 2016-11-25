@@ -15,7 +15,15 @@ namespace WPFSample_UI.Controllers
         public ActionResult Index()
         {
             clsListadosPersonasBL listado = new clsListadosPersonasBL();
-            return View(listado.getListadoPersonaBL());
+            try
+            {
+                return View(listado.getListadoPersonaBL());
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
+
         }
 
 
@@ -44,8 +52,14 @@ namespace WPFSample_UI.Controllers
             clsPersona p = cmpb.getPersona(id);
 
             return View("Edit",p);
+            
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Edit(clsPersona p)
         {
@@ -63,19 +77,45 @@ namespace WPFSample_UI.Controllers
         public ActionResult Details(int id)
         {
             clsManejadoraPersonaBL detail = new clsManejadoraPersonaBL();
-            
-            clsPersona p = detail.getPersona(id);
+            clsPersona p;
+            try
+            {
+                 p = detail.getPersona(id);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
             return View("Details", p);
         }
-
+        /// <summary>
+        /// Es la primera vez que entra al delete, recoge la id de la url.
+        /// </summary>
+        /// <param name="id">recoge el parametro de la url</param>
+        /// <returns></returns>
         public ActionResult Delete(int id)
         {
             clsManejadoraPersonaBL cmpb = new clsManejadoraPersonaBL();
-            clsPersona p = cmpb.getPersona(id);
+            clsPersona p;
+            try
+            {
+                p = cmpb.getPersona(id);
+            }
+            catch (Exception)
+            {
+                return View("Error"); 
+
+            }
+            
 
             return View("Delete",p);
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost , ActionName("Delete")]
         public ActionResult DeleteConfirm(int id)
         {

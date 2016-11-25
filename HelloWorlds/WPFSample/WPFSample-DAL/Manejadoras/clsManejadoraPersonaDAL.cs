@@ -20,15 +20,22 @@ namespace WPFSample_DAL.Manejadoras
         }
 
         /// <summary>
-        ///  añade una persona a la base de datos
+        /// El metodo obtiene una persona por parametros, e intenta introducirlo en la bbdd,
+        ///     si todo va correcto retornará un entero (0 o 1) con el numero de filas afectadas en la bbdd,
+        ///     si algo falla en la conexion saltará una excepcion sql.
+        ///     Retornara 1 en el caso de que hubiera insertado una fila en la bbdd
+        ///     "       " 0 en el caso de que no insertara nada.
         /// </summary>
-        /// <param name="persona"></param>
-        /// <returns></returns>
+        /// <param name="persona">Objeto persona que hace refencia a la persona para insertar</param>
+        /// <returns>Retornara un entero con el numero de filas afectadas en la bbdd :
+        ///         1 en el caso de que hubiera insertado una fila en la bbdd
+        ///         0 en el caso de que no insertara nada.
+        /// </returns>
         public int insertPersona(clsPersona persona)
         {
             int resultado = 0;
 
-            SqlConnection conexion;
+            SqlConnection conexion= new SqlConnection() ;
             SqlCommand comando;
            
 
@@ -60,7 +67,7 @@ namespace WPFSample_DAL.Manejadoras
             }
             finally
             {
-                //conexion.Close();
+                conexion.Close();
             }
 
             
@@ -70,13 +77,19 @@ namespace WPFSample_DAL.Manejadoras
 
 
         /// <summary>
-        ///     Este metodo actualizara una persona de la base de datos segun su id
+        ///     Este metodo obtiene una persona por parametros, intentara actualizar una persona de la bbdd segun su id
+        ///         si todo va correcto, y hay alguna persona con esa id en la bbdd lo actualizará (y retornara 1)
+        ///         ,si no hay ninguna persona con esa id en la bbdd no actualizará nada (y retornara 0),
+        ///         si hay algun fallo con la bbdd saltará una excepcion.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">entero que hace referencia a la id de una persona </param>
+        /// <returns> retornará un entero con el numero de filas afectadas en la bbdd
+        ///           " 1 en el caso de que hubiera actualizado una persona en la bbdd
+        ///           " 0 en el caso de que no hubiera actualizado nada.
+        /// </returns>
         public int updatePersona(clsPersona persona)
         {
-            int resultado=-1;
+            int resultado=0;
             
 
             SqlConnection conexion = new SqlConnection();
@@ -118,10 +131,12 @@ namespace WPFSample_DAL.Manejadoras
                 return resultado;
         }
         /// <summary>
-        /// Devuelve una persona
+        ///     Obtiene una id por parametros, buscará una persona en la bbdd con ese id, si lo encuentra devolvera esa persona
+        ///         si no devolvera una persona vacía, saltará excepcion de sql en caso de algun fallo con la conexion.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">entero que hace referencia a la id de la persona </param>
+        /// <returns>retornara una persona, si todo es correcto una persona de la bbdd segun su id,
+        ///         si no hay ninguna persona con esa id retornará una persona vacia.</returns>
         public clsPersona getPersona(int id)
         {
             clsPersona persona = new clsPersona();
@@ -174,12 +189,16 @@ namespace WPFSample_DAL.Manejadoras
             return persona;
         }
 
-
+        
         /// <summary>
-        /// Borra a una persona segun la id que nos envien
+        ///  Intetara borrar a una persona de la bbdd segun la id que nos envien, devolverá un entero con el num. de filas
+        ///     afectadas (1 o 0), si algo falla en la conexion Saltará una excepcion sql.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">entero id que hace referencia a la id de la persona a borrar</param>
+        /// <returns>retorna un entero con el numero de filas afectadas en la bbdd,
+        ///             si todo va bien retornará 1 (que ha borrado a una persona),
+        ///             si no ha encontrado a la persona retornara 0,
+        ///</returns>
         public int deletePerson(int id)
         {
             int resultado = 0;

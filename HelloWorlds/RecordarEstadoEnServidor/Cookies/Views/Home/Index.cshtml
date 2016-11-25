@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<html>
+<head>
+    <meta  name="viewport" content="width=device-width"/>
+    <title>Index</title>
+</head>
+
+<body>
+    <div>
+        @using (Html.BeginForm()) { 
+        <p>Contador que viene por ViewBag:  @ViewBag.contador</p>
+        <br />
+        <p>Contador que viene por Cookie:  @Request.Cookies["contador"].Value </p>
+        <br />
+        <br />
+        <input type="submit" value="+1" />
+        }
+    </div>
+    </body>
+</html>
