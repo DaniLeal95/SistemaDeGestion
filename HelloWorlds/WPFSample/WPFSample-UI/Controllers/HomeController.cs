@@ -6,18 +6,20 @@ using System.Web.Mvc;
 using WPFSample_BL;
 using WPFSample_BL.Listados;
 using WPFSample_Ent;
+using WPFSample_UI.Models;
 
 namespace WPFSample_UI.Controllers
 {
     public class HomeController : Controller
     {
+
         // GET: Home
         public ActionResult Index()
         {
-            clsListadosPersonasBL listado = new clsListadosPersonasBL();
+            VMclsListado listado = new VMclsListado();
             try
             {
-                return View(listado.getListadoPersonaBL());
+                return View(listado);
             }
             catch (Exception)
             {
@@ -38,10 +40,10 @@ namespace WPFSample_UI.Controllers
         {
             int i;
             clsManejadoraPersonaBL createPersona = new clsManejadoraPersonaBL();
-            clsListadosPersonasBL listado = new clsListadosPersonasBL();
             i = createPersona.insertPerson(p);
-
-            return View("Index",listado.getListadoPersonaBL());
+            VMclsListado listado = new VMclsListado();
+            
+            return View("Index",listado);
         }
 
         //Metodos para Actualizar

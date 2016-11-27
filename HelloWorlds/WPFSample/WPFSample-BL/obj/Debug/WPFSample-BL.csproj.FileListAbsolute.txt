@@ -7,3 +7,12 @@ C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample
 C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-BL\bin\Debug\WPFSample-Ent.pdb
 C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-BL\obj\Debug\WPFSample-BL.dll
 C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-BL\obj\Debug\WPFSample-BL.pdb
+C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-BL\bin\Debug\WPFSample-BL.dll
+C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-BL\bin\Debug\WPFSample-BL.pdb
+C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-BL\bin\Debug\WPFSample-DAL.dll
+C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-BL\bin\Debug\WPFSample-Ent.dll
+C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-BL\bin\Debug\WPFSample-DAL.pdb
+C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-BL\bin\Debug\WPFSample-Ent.pdb
+C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-BL\obj\Debug\WPFSample-BL.csprojResolveAssemblyReference.cache
+C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-BL\obj\Debug\WPFSample-BL.dll
+C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-BL\obj\Debug\WPFSample-BL.pdb

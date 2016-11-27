@@ -1,9 +1,11 @@
-﻿@model IEnumerable<WPFSample_Ent.clsPersona>
+﻿@model WPFSample_UI.Models.VMclsListado
 
 @{
-    Layout = null;
+	Layout = null;
 }
-
+@{List<WPFSample_Ent.clsPersona> listado = Model.lista.getListadoPersonaBL();
+	
+	}
 <!DOCTYPE html>
 
 <html>
@@ -18,48 +20,50 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nombre)
+                @Html.DisplayNameFor(model => model.lista.getListadoPersonaBL().ElementAt(0).nombre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.apellido)
+                @Html.DisplayNameFor(model => model.lista.getListadoPersonaBL().ElementAt(0).apellido)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.fechaNac)
+                @Html.DisplayNameFor(model => model.lista.getListadoPersonaBL().ElementAt(0).fechaNac)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.direccion)
+                @Html.DisplayNameFor(model => model.lista.getListadoPersonaBL().ElementAt(0).direccion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.telefono)
+                @Html.DisplayNameFor(model => model.lista.getListadoPersonaBL().ElementAt(0).telefono)
             </th>
             <th></th>
         </tr>
     
-    @foreach (var item in Model) {
+    @for (var i=0;i<Model.cantidad;i++) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.nombre)
+                @Html.DisplayFor(modelItem => listado.ElementAt(i).nombre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.apellido)
+                @Html.DisplayFor(modelItem => listado.ElementAt(i).apellido)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.fechaNac)
+                @Html.DisplayFor(modelItem => listado.ElementAt(i).fechaNac)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.direccion)
+                @Html.DisplayFor(modelItem => listado.ElementAt(i).direccion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.telefono)
+                @Html.DisplayFor(modelItem => listado.ElementAt(i).telefono)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+                @Html.ActionLink("Edit", "Edit", new { id=listado.ElementAt(i).id }) |
+                @Html.ActionLink("Details", "Details", new { id= listado.ElementAt(i).id }) |
+                @Html.ActionLink("Delete", "Delete", new { id= listado.ElementAt(i).id })
             </td>
         </tr>
     }
     
     </table>
+
+	<p>Numero de personas: @Model.cantidad </p> 
 </body>
 </html>

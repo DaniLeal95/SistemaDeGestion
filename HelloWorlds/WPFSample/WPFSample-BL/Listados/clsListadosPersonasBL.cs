@@ -26,5 +26,6 @@ namespace WPFSample_BL.Listados
             return listadoPersonas;
         }
 
+
     }
 }
