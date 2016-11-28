@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+@using (Html.BeginForm())
+{
+   <div>
+		@if(@Session["usuario"] == null){
+
+			<p>Escriba su usuario</p>
+
+			<input type="text" name="usuario" />
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Index" class="btn btn-default" />
+                </div>
+            </div>    
+        }
+        else
+        {
+
+			<h1>Su nombre es @Session["usuario"]</h1>
+	   }
+	
+
+    </div>
+}
+</body>
+</html>
