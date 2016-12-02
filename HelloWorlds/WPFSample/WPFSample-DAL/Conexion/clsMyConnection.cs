@@ -33,13 +33,13 @@ namespace WPFSample
 
         public clsMyConnection()
         {
-            this.dataBase = "WPFSample";
+            this.dataBase = "WPSampleDani";
             //El primer usuario es de de la base de datos del instituto, el segundo la de casa
             this.user = "prueba";
             //this.user = "pruebaResident";
-            this.pass = "123";
+            this.pass = "iesnervion123.";
             //this.host ip del servidor
-            this.host = "192.168.0.161";
+            this.host = "wpsampledani.database.windows.net";
 
         }
         //Con parámetros por si quisiera cambiar las conexiones
@@ -67,9 +67,9 @@ namespace WPFSample
             try
             {
                 //connection.ConnectionString = "Data Source=" & My.Computer.Name & "Initial Catalog=" & _database & ";uid=" & _user & ";pwd=" & _user & ";"
-                //connection.ConnectionString = "server=(local);database=" + dataBase + ";uid=" + user + ";pwd=" + pass + ";";
+                connection.ConnectionString = "server="+this.host+";database=" + dataBase + ";uid=" + user + ";pwd=" + pass + ";";
                 //Muy cómoda esta forma de escribir la cadena conStringFormat, metiendo los parametros entre llaves y asignandoselo tras la coma
-                connection.ConnectionString = "Server=tcp:iesnervion.database.windows.net,1433;Initial Catalog=WPFSample;Persist Security Info=False;User ID=prueba;Password=iesnervion123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                //connection.ConnectionString = "Server=tcp:iesnervion.database.windows.net,1433;Initial Catalog=WPFSample;Persist Security Info=False;User ID=prueba;Password=iesnervion123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
                 connection.Open();
             }
             catch (SqlException)

@@ -7,3 +7,4 @@ C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-
 C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-Ent\obj\Debug\WPFSample-Ent.csprojResolveAssemblyReference.cache
 C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-Ent\obj\Debug\WPFSample-Ent.dll
 C:\Users\Dani\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-Ent\obj\Debug\WPFSample-Ent.pdb
+C:\Users\dleal\Documents\GitHub\SistemaDeGestion\HelloWorlds\WPFSample\WPFSample-Ent\obj\Debug\WPFSample-Ent.csprojResolveAssemblyReference.cache
