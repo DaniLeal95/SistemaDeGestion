@@ -41,9 +41,9 @@ namespace WPFSample_UI.Controllers
             int i;
             clsManejadoraPersonaBL createPersona = new clsManejadoraPersonaBL();
             i = createPersona.insertPerson(p);
-            VMclsListado listado = new VMclsListado();
+            //VMclsListado listado = new VMclsListado();
             
-            return View("Index",listado);
+            return RedirectToAction("Index");
         }
 
         //Metodos para Actualizar
@@ -53,7 +53,7 @@ namespace WPFSample_UI.Controllers
             clsManejadoraPersonaBL cmpb = new clsManejadoraPersonaBL();
             clsPersona p = cmpb.getPersona(id);
 
-            return View("Edit",p);
+            return RedirectToAction("Edit",p);
             
         }
 
@@ -71,7 +71,7 @@ namespace WPFSample_UI.Controllers
 
             i = update.updatePerson(p);
 
-            return View("Index",listado.getListadoPersonaBL());
+            return RedirectToAction("Index");
         }
 
         //Metodo para detail

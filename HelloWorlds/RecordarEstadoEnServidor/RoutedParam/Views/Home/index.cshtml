@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "index";
+}
+
+
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+    </head>
+    <body>
+        <h2>index</h2>
+        <div>
+            @using (Html.BeginForm())
+            {
+
+            <p>
+                contador por View Bag <label>@ViewBag.contador</label> <br />
+                contador por Routed Param <label>@ViewContext.RouteData.Values["id"]</label><br />
+
+            </p>
+            <input type="submit" value="+1" />
+            }
+        </div>
+    </body>
+
+</html>
+

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<personas>
+
+  <persona>
+    <nombre>Daniel</nombre>
+    <apellidos>Leal</apellidos>
+  </persona>
+
+  <persona>
+    <nombre>Jose</nombre>
+    <apellidos>Mercé</apellidos>
+  </persona>
+
+  <persona>
+    <nombre>Cara</nombre>
+    <apellidos>Anchoa</apellidos>
+  </persona>
+</personas>
