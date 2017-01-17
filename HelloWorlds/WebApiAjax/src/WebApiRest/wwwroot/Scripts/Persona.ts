@@ -25,7 +25,7 @@
 
     cadena() {
         let cadena: string;
-        cadena = this.nombre + "," + this.apellido;
+        cadena = this.apellido + "," + this.nombre;
         return cadena;
     }
    

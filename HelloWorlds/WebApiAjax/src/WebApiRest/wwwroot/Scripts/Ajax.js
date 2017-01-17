@@ -4,7 +4,6 @@ function start() {
     document.getElementById("texto");
 }
 function listar() {
-    document.getElementById("texto").innerHTML = "esto va";
     var oXML = new XMLHttpRequest();
     oXML.open("GET", "../api/personas/");
     oXML.onreadystatechange = function () {
@@ -13,8 +12,11 @@ function listar() {
             var arraypersonas = JSON.parse(oXML.responseText);
             for (var i = 0; i < arraypersonas.length; i++) {
                 var p = new Persona(arraypersonas[i]);
+                var select = document.getElementById("personas");
+                var option = document.createElement("option");
+                option.text = p.cadena();
+                select.appendChild(option);
             }
-            document.getElementById("texto").innerHTML = "hola " + p.cadena();
         }
     };
     oXML.send();

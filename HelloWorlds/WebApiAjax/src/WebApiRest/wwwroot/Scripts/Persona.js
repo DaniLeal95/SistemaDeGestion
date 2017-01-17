@@ -12,7 +12,7 @@ var Persona = (function () {
     }
     Persona.prototype.cadena = function () {
         var cadena;
-        cadena = this.nombre + "," + this.apellido;
+        cadena = this.apellido + "," + this.nombre;
         return cadena;
     };
     return Persona;
