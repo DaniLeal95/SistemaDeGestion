@@ -86,10 +86,13 @@ function generar() {
         personaSeleccionada.nombre = newWindow.document.getElementById("nombre").value;
         personaSeleccionada.apellido = newWindow.document.getElementById("apellido").value;
         personaSeleccionada.fechaNac = newWindow.document.getElementById("fechaNac").value;
+        var dateFormat = require('dateformat');
+        dateFormat(personaSeleccionada.fechaNac, "yyyy-mm-dd hh:MM:ss");
         personaSeleccionada.direccion = newWindow.document.getElementById("direccion").value;
         personaSeleccionada.telefono = newWindow.document.getElementById("telefono").value;
         var oXML = new XMLHttpRequest();
         oXML.open("PUT", "../api/personas/" + personaSeleccionada.id);
+        oXML.setRequestHeader("Content-Type", "application/json");
         oXML.onreadystatechange = function () {
             if (oXML.readyState == 4 && oXML.status == 200) {
                 personaSeleccionada = null;
