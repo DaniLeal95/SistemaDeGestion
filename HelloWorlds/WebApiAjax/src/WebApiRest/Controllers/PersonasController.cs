@@ -43,7 +43,16 @@ namespace WebApiRest.Controllers
         {
 
             clsManejadoraPersonaBL bl = new clsManejadoraPersonaBL();
-            bl.insertPerson(value);
+            if (bl.insertPerson(value)==1)
+            {
+                Response.StatusCode = 204;
+            }
+            else
+            {
+                Response.StatusCode = 404;
+
+            }
+
         }
 
         // PUT api/values/5

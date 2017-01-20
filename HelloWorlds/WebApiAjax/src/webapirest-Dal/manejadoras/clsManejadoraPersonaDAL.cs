@@ -32,7 +32,6 @@ namespace WebApiRest
         public int insertPersona(clsPersona persona)
         {
             int resultado = 0;
-
             SqlConnection conexion= new SqlConnection() ;
             SqlCommand comando;
            
@@ -43,9 +42,10 @@ namespace WebApiRest
                 comando = new SqlCommand();
 
                 //Añadimos los parametros
+                
                 comando.Parameters.Add("@Nombre", System.Data.SqlDbType.VarChar).Value = persona.nombre;
                 comando.Parameters.Add("@Apellidos", System.Data.SqlDbType.VarChar).Value = persona.apellido;
-                comando.Parameters.Add("@FechaNac", System.Data.SqlDbType.VarChar).Value = persona.fechaNac;
+                comando.Parameters.Add("@FechaNac", System.Data.SqlDbType.DateTime).Value = persona.fechaNac;
                 comando.Parameters.Add("@Direccion", System.Data.SqlDbType.VarChar).Value = persona.direccion;
                 comando.Parameters.Add("@Telefono", System.Data.SqlDbType.VarChar).Value = persona.telefono;
 
@@ -103,7 +103,7 @@ namespace WebApiRest
                 comando.Parameters.Add("@Id", System.Data.SqlDbType.Int).Value = persona.id;
                 comando.Parameters.Add("@Nombre", System.Data.SqlDbType.VarChar).Value = persona.nombre;
                 comando.Parameters.Add("@Apellidos", System.Data.SqlDbType.VarChar).Value = persona.apellido;
-                comando.Parameters.Add("@FechaNac", System.Data.SqlDbType.VarChar).Value = persona.fechaNac;
+                comando.Parameters.Add("@FechaNac", System.Data.SqlDbType.DateTime).Value = persona.fechaNac;
                 comando.Parameters.Add("@Direccion", System.Data.SqlDbType.VarChar).Value = persona.direccion;
                 comando.Parameters.Add("@Telefono", System.Data.SqlDbType.VarChar).Value = persona.telefono;
 
